@@ -1,0 +1,410 @@
+/* Dark Theme Colors */
+:root {
+    --dark-bg: #0a0a0a;  /* Darker background */
+    --dark-surface: #1a1a1a;  /* Main surface color */
+    --dark-surface-2: #242424;  /* Secondary surface */
+    --dark-surface-3: #2d2d2d;  /* Tertiary surface */
+    --dark-border: #333333;
+    --dark-text: #ffffff;
+    --dark-text-secondary: #a0a0a0;
+    --dark-accent: #2d7aff;  /* Modern blue accent */
+    --dark-accent-hover: #5291ff;
+    --dark-error: #ff4545;
+    --dark-success: #00c853;
+    --dark-warning: #ffd600;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+.dark-theme section,
+.dark-theme header,
+.dark-theme .auth-form,
+.dark-theme .stock-card,
+.dark-theme .converter-container {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme input,
+.dark-theme select,
+.dark-theme textarea {
+    background: var(--dark-surface-2);
+    color: var(--dark-text);
+    border: 1px solid var(--dark-border);
+}
+
+.dark-theme input:focus,
+.dark-theme select:focus,
+.dark-theme textarea:focus {
+    border-color: var(--dark-accent);
+    box-shadow: 0 0 0 2px rgba(45, 122, 255, 0.2);
+}
+
+.dark-theme .expense-row:hover,
+.dark-theme .metric-card {
+    background: var(--dark-surface-2);
+}
+
+.dark-theme .metric-card:hover {
+    background: var(--dark-surface-3);
+}
+
+.dark-theme canvas {
+    background: var(--dark-surface);
+}
+
+/* Tab Navigation */
+.dark-theme .tab-navigation {
+    background: var(--dark-surface);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+.dark-theme .tab-button {
+    color: var(--dark-text-secondary);
+    background: transparent;
+}
+
+.dark-theme .tab-button:hover {
+    background: var(--dark-surface-2);
+}
+
+.dark-theme .tab-button.active {
+    background: var(--dark-accent);
+    color: var(--dark-text);
+}
+
+/* Chatbot Styles */
+.dark-theme .chatbot-section {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+}
+
+.dark-theme .chatbot-header {
+    background: var(--dark-accent);
+    color: var(--dark-text);
+}
+
+.dark-theme .chat-messages {
+    background: var(--dark-surface);
+}
+
+.dark-theme .message.bot {
+    background: var(--dark-surface-2);
+    color: var(--dark-text);
+}
+
+.dark-theme .message.user {
+    background: var(--dark-accent);
+    color: var(--dark-text);
+}
+
+.dark-theme .chat-input {
+    background: var(--dark-surface-2);
+    border-top: 1px solid var(--dark-border);
+}
+
+.dark-theme .chat-input input {
+    background: var(--dark-surface-3);
+    color: var(--dark-text);
+    border: 1px solid var(--dark-border);
+}
+
+/* Button Styles */
+.dark-theme button {
+    background: var(--dark-accent);
+    color: var(--dark-text);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.dark-theme button:hover {
+    background: var(--dark-accent-hover);
+}
+
+.dark-theme button.secondary {
+    background: var(--dark-surface-2);
+}
+
+.dark-theme button.secondary:hover {
+    background: var(--dark-surface-3);
+}
+
+/* Theme Toggle */
+.dark-theme .theme-toggle {
+    background: var(--dark-surface-2);
+    border: 1px solid var(--dark-border);
+}
+
+.dark-theme .toggle-slider {
+    background: var(--dark-accent);
+}
+
+/* Table Styles */
+.dark-theme table {
+    background: var(--dark-surface);
+    border-color: var(--dark-border);
+}
+
+.dark-theme th {
+    background: var(--dark-surface-2);
+    color: var(--dark-text);
+}
+
+.dark-theme td {
+    border-color: var(--dark-border);
+}
+
+.dark-theme tr:hover {
+    background: var(--dark-surface-2);
+}
+
+/* Card and Container Styles */
+.dark-theme .card,
+.dark-theme .container {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+}
+
+/* Status Colors */
+.dark-theme .success {
+    color: var(--dark-success);
+}
+
+.dark-theme .error {
+    color: var(--dark-error);
+}
+
+.dark-theme .warning {
+    color: var(--dark-warning);
+}
+
+/* Scrollbar Styles */
+.dark-theme ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.dark-theme ::-webkit-scrollbar-track {
+    background: var(--dark-surface);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+    background: var(--dark-surface-3);
+    border-radius: 4px;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-border);
+}
+
+/* Animation for theme transition */
+.theme-transition {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+
+/* Light theme position */
+body:not(.dark-theme) .toggle-slider {
+    transform: translateX(30px);
+    background: #ffd43b;
+}
+
+/* Dark theme position */
+body.dark-theme .toggle-slider {
+    background: #4dabf7;
+    left: 1px;
+}
+
+/* Icons */
+.theme-toggle::before {
+    content: '🌙';
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.theme-toggle::after {
+    content: '☀️';
+    position: absolute;
+    right: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+/* Active icon states */
+body.dark-theme .theme-toggle::before {
+    opacity: 1;
+}
+
+body:not(.dark-theme) .theme-toggle::after {
+    opacity: 1;
+}
+
+/* Button reset styles */
+.theme-toggle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+}
+
+.theme-toggle:focus {
+    outline: none;
+    border-color: #4dabf7;
+    box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.2);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .theme-toggle {
+        width: 50px;
+        height: 26px;
+    }
+
+    .toggle-slider {
+        width: 20px;
+        height: 20px;
+    }
+
+    body:not(.dark-theme) .toggle-slider {
+        transform: translateX(24px);
+    }
+
+    .theme-toggle::before,
+    .theme-toggle::after {
+        font-size: 12px;
+    }
+}
+
+/* Global Button Styles for Dark Theme */
+.dark-theme button,
+.dark-theme .auth-form button,
+.dark-theme #set-budget-btn,
+.dark-theme #search-stock-btn,
+.dark-theme #convert-btn,
+.dark-theme #expense-form button,
+.dark-theme .header-controls button {
+    background: #7289da !important; /* Discord-like blue */
+    background-image: none !important;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(114, 137, 218, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Button Hover States */
+.dark-theme button:hover,
+.dark-theme .auth-form button:hover,
+.dark-theme #set-budget-btn:hover,
+.dark-theme #search-stock-btn:hover,
+.dark-theme #convert-btn:hover,
+.dark-theme #expense-form button:hover,
+.dark-theme .header-controls button:hover {
+    background: #5c73c7 !important; /* Darker Discord blue */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(114, 137, 218, 0.3);
+}
+
+/* Danger/Warning Button Variants */
+.dark-theme button.danger {
+    background: #f04747 !important; /* Discord red */
+}
+
+.dark-theme button.danger:hover {
+    background: #d84040 !important;
+}
+
+.dark-theme button.warning {
+    background: #faa61a !important; /* Discord yellow */
+}
+
+.dark-theme button.warning:hover {
+    background: #e69317 !important;
+}
+
+/* Auth Form Specific Button Styles */
+.dark-theme .auth-form button {
+    background: #7289da !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.dark-theme .auth-form button:hover {
+    background: #5c73c7 !important;
+}
+
+/* Disabled Button States */
+.dark-theme button:disabled,
+.dark-theme button[disabled] {
+    background: #4f545c !important; /* Discord grey */
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+/* Export Buttons */
+.dark-theme #export-section button {
+    background: #43b581 !important; /* Discord green */
+}
+
+.dark-theme #export-section button:hover {
+    background: #3ca374 !important;
+}
+
+/* Logout Button */
+.dark-theme .header-controls .logout-btn {
+    background: #f04747 !important; /* Discord red */
+}
+
+.dark-theme .header-controls .logout-btn:hover {
+    background: #d84040 !important;
+}
+
+/* Focus States */
+.dark-theme button:focus,
+.dark-theme .auth-form button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(114, 137, 218, 0.5);
+}
+
+/* Button Groups */
+.dark-theme .button-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dark-theme button,
+    .dark-theme .auth-form button {
+        padding: 12px 20px;
+        font-size: 0.95em;
+    }
+    
+    .dark-theme .button-group {
+        flex-direction: column;
+    }
+} 

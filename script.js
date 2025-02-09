@@ -84,4 +84,4 @@ export class Auth {
 
 // Initialize auth
 const auth = new Auth();
-auth.checkAuth();
+auth.checkAuth(); 
